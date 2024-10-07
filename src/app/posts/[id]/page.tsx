@@ -12,10 +12,7 @@ const posts = [
 
       AI is not just a single technology but a suite of techniques that enable machines to perform tasks that typically require human intelligence, such as understanding natural language, recognizing patterns, and making decisions. This blog will break down these advancements into digestible sections, helping readers comprehend complex ideas in a straightforward manner.
 
-      The applications of AI are vast and impactful. In healthcare, AI assists in diagnosing diseases, personalizing treatment plans, and managing patient data. In finance, algorithms powered by AI help in fraud detection, risk assessment, and algorithmic trading, optimizing financial operations. The post will also highlight AI's role in everyday applications like virtual assistants and recommendation systems.
-
-      Furthermore, the blog will address ethical considerations surrounding AI, emphasizing the importance of responsible AI development. With a strong foundation in AI principles, readers will be better equipped to engage with this fascinating and rapidly evolving field, opening doors to further exploration and innovation.
-    `
+      The applications of AI are vast and impactful. In healthcare, AI assists in diagnosing diseases, personalizing treatment plans, and managing patient data. In finance, algorithms powered by AI help in fraud detection, risk assessment, and algorithmic trading, optimizing financial operations. The post will also highlight AI's role in everyday applications like virtual assistants and recommendation systems. `
   },
   {
     id: '2',
@@ -203,10 +200,14 @@ export default function Post({ params }: { params: { id: string } }) {
     return <h2 className="text-2xl font-bold">Post not found</h2>;
   }
 
+  const paragraphs = post.description.split('\n').map((para, index) => (
+    <p key={index} className="mt-4">{para.trim()}</p>
+  ));
+
   return (
     <>
       <h1 className="md:text-4xl text-2xl font-bold mt-5">{post.title}</h1>
-      <p className="mt-4">{post.description}</p>
+      {paragraphs}
       <CommentSection postId={post.id} />
     </>
   );
