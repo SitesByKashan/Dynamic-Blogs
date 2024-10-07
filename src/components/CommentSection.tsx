@@ -23,7 +23,7 @@ export default function CommentSection({ }: { postId: string }) {
         {comments.length > 0 ? (
           comments.map((comment, index) => (
             <Card key={index}>
-              <CardContent>{comment}</CardContent>
+              <CardContent className='justify-center items-center'>{comment}</CardContent>
             </Card>
           ))
         ) : (
