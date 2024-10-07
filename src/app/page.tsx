@@ -1,101 +1,38 @@
-import Image from "next/image";
+// pages/index.js
+
+import BlogCard from '@/components/BlogCard';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const posts = [
+    { id: '1', title: 'Intro to AI', description: 'A beginner-friendly introduction to AI.', date: '2024-01-01' },
+    { id: '2', title: 'Machine Learning Basics', description: 'Understanding supervised and unsupervised learning.', date: '2024-02-01' },
+    { id: '3', title: 'Deep Learning Explained', description: 'An overview of deep learning and its applications.', date: '2024-03-01' },
+    { id: '4', title: 'Natural Language Processing 101', description: 'Exploring the fundamentals of NLP and its use cases.', date: '2024-03-15' },
+    { id: '5', title: 'AI in Healthcare', description: 'How AI is transforming the healthcare industry.', date: '2024-04-01' },
+    { id: '6', title: 'Data Preprocessing Techniques', description: 'Essential techniques for preparing data for machine learning.', date: '2024-04-15' },
+    { id: '7', title: 'Building Your First Neural Network', description: 'A step-by-step guide to creating a neural network.', date: '2024-05-01' },
+    { id: '8', title: 'Ethics in AI', description: 'Discussing the ethical implications of AI technologies.', date: '2024-05-15' },
+    { id: '9', title: 'AI for Image Recognition', description: 'Understanding how AI powers image recognition systems.', date: '2024-06-01' },
+    { id: '10', title: 'Machine Learning Algorithms Demystified', description: 'A look at popular machine learning algorithms and their applications.', date: '2024-06-15' },
+    { id: '11', title: 'AI in Finance', description: 'How AI is changing the landscape of the finance sector.', date: '2024-07-15' },
+    { id: '12', title: 'The Role of Big Data in AI', description: 'Understanding the relationship between big data and AI.', date: '2024-08-01' },
+    { id: '13', title: 'AI and Automative', description: 'Exploring the impact of AI on automotive in various industries.', date: '2024-08-15' },
+    { id: '14', title: 'Getting Started with TensorFlow', description: 'A beginner’s guide to using TensorFlow for machine learning.', date: '2024-09-15' },
+    { id: '15', title: 'AI-Powered Chatbots', description: 'How AI chatbots are transforming customer service and engagement.', date: '2024-10-15' },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  return (
+    <div>
+    <h1 className="text-3xl font-bold text-center my-8">AI & Machine Learning Blog</h1>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {posts.map((post, index) => (
+        <BlogCard 
+          key={post.id} 
+          post={post} 
+          isDarkBackground={index % 2 === 0} 
+        />
+      ))}
     </div>
+  </div>
   );
 }
