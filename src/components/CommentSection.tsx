@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export default function CommentSection({ postId }: { postId: string }) {
+export default function CommentSection({ }: { postId: string }) {
     const [comments, setComments] = useState<string[]>([]);
     const [newComment, setNewComment] = useState('');
   
