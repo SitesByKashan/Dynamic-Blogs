@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>AI $ ML BLOGS</title>
+        <title>AI & ML BLOGS</title>
         <link rel="shortcut icon" href="/favicon.jpg" type="image/x-icon" />
       </head>
       <body className='flex flex-col min-h-screen'>
