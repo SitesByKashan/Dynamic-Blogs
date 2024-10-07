@@ -205,7 +205,7 @@ export default function Post({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <h1 className="text-4xl font-bold mt-5">{post.title}</h1>
+      <h1 className="md:text-4xl text-2xl font-bold mt-5">{post.title}</h1>
       <p className="mt-4">{post.description}</p>
       <CommentSection postId={post.id} />
     </>

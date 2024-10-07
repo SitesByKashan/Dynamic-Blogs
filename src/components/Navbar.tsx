@@ -6,7 +6,7 @@ export default function Navbar() {
     <header className="text-gray-400 bg-gray-800 body-font">
       <div className="container mx-auto py-2 flex items-center justify-center">
         <Link href={'/'} className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-          <span className="ml-3 text-xl md:text-3xl">AI $ MACHINE LEARNING BLOGS</span>
+          <span className="ml-3 text-2xl md:text-3xl">AI $ MACHINE LEARNING BLOGS</span>
         </Link>
       </div>
     </header>
